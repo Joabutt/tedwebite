@@ -1,0 +1,44 @@
+---
+import { Picture } from "@astrojs/image/components";
+import heroImage from "assets/hero.png";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+import features from "./features.astro"
+---
+
+<main
+  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <div class="py-6 md:order-1 hidden md:block">
+    <Picture
+      src={heroImage}
+      alt="hero.png"
+      widths={[200, 400, 600]}
+      aspectRatio="1:1"
+      sizes="(max-width: 800px) 100vw, 400px"
+      loading="eager"
+      format="png"
+    />
+  </div>
+  <div>
+    <h1
+      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+      Hey there!
+    </h1>
+    <p class="text-lg mt-4 text-slate-600 max-w-xl">
+      I'm Ted.<wbr /> This is my website for CAO in SST inc.
+    </p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+
+      <Link
+        size="lg"
+        style="outline"
+        rel="noopener"
+        href="/about"
+        class="flex gap-1 items-center justify-center"
+        target="_blank">
+        <Icon class="text-black w-4 h-4" name="face" />
+        About me
+      </Link>
+    </div>
+  </div>
+</main>

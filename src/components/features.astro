@@ -1,0 +1,74 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+
+const features = [
+  {
+    title: "Swift",
+    description:
+      "Placeholder",
+    icon: "swift",
+  },
+  {
+    title: "Flutter",
+    description:
+      "Placeholder",
+    icon: "flutter",
+  },
+  {
+    title: "Python",
+    description:
+      "Placeholder",
+    icon: "python",
+  },
+  {
+    title: "Figma",
+    description:
+      "Placeholder",
+    icon: "figma",
+  },
+  {
+    title: "Final Cut Pro",
+    description:
+      "Placeholder",
+    icon: "fcp",
+  },
+  {
+    title: "Web developement",
+    description:
+      "Placeholder",
+    icon: "webdev",
+  },
+];
+---
+
+<center><Icon name="downarrow" height="200px" width="200px"/></center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    My Skills
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    I have a vast array of skills, ranging from video editing to coding, etc.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+
+        </div>
+      </div>
+    ))
+  }
+</div>

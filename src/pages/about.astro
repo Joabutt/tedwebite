@@ -1,0 +1,68 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import { Picture } from "@astrojs/image/components";
+
+const Ted =
+  "https://i.ibb.co/dGc9P2p/Whats-App-Image-2023-01-27-at-8-54-33-AM.jpg";
+
+
+const team = [
+  {
+    name: "Ted Goh",
+    title: "Hopefully future SST inc CAO",
+    avatar: {
+      src: Ted,
+      width: 480,
+      height: 560,
+    },
+  },
+
+];
+---
+
+<Layout title="About">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">About me</Fragment>
+      <Fragment slot="desc">I am Ted</Fragment>
+    </Sectionhead>
+
+    <center><div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+            {
+        team.map((item) => (
+          <div class="group">
+            <div class="w-full aspect-square">
+              <Picture
+                {...item.avatar}
+                format="avif"
+                alt="Ted"
+                widths={[200, 400]}
+                aspectRatio="1:1"
+                sizes="(max-width: 800px) 100vw, 800px"
+                class="w-full h-full object-cover rounded transition  group-hover:-translate-y-1 group-hover:shadow-xl"
+                format="avif"
+              />
+            </div>
+
+            <div class="mt-4 text-center">
+              <h2 class="text-lg text-gray-800"> {item.name}</h2>
+              <h3 class="text-sm text-slate-500"> {item.title}</h3>
+            </div>
+          </div>
+        ))
+      }
+      <h2 class="font-bold text-3xl text-gray-800">
+        Hello! My name is Ted and I am a student from SST in Singapore. I have around 2 years of experience in programming. I mostly specialise in app development, mainly using the Flutter framework. Apart from programming, I am also skilled in UI/UX design using Figma, and video editing using Final Cut Pro, and I am always looking for new and exciting opportunities to expand my knowledge and experience. In my free time, I enjoy thinking of new app ideas and designing them, and building them afterwards. Additionally, I also enjoy reading self-improvement and technical books.
+
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-500">
+        Thank you for visiting my website! If you would like to get in touch, please feel free to reach out to me via email or phone number.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+
+    </div></center>
+  </Container>
+</Layout>
